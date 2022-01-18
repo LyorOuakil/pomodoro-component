@@ -12,6 +12,7 @@
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
+        "project": "./tsconfig.json",
         "ecmaFeatures": {
             "jsx": true
         },
@@ -24,16 +25,19 @@
         "prettier"
     ],
     "rules": {
-        "prettier/prettier": "error",
+        "prettier/prettier": "warn",
         "import/extensions": [
-            "error",
             "ignorePackages",
-            {
-                "js": "never",
-                "jsx": "never",
-                "ts": "never",
-                "tsx": "never"
-            }
+            "never"
+        ]
+    }, 
+    "settings": {
+        "import/extensions": [
+            ".js",
+            ".mjs",
+            ".jsx",
+            ".ts",
+            ".tsx"
         ]
     }
 }
