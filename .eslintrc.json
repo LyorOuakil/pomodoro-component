@@ -27,7 +27,7 @@
     "rules": {
         "prettier/prettier": "warn",
         "import/extensions": [
-            "ignorePackages",
+            0,
             "never"
         ]
     }, 
