@@ -17,6 +17,7 @@ const Timer: React.FC<{ time: Time }> = ({ time }) => {
     <div>
       <div>{`${hrsMinsSecs.hrs}:${hrsMinsSecs.mn}:${hrsMinsSecs.s}`}</div>
       <button onClick={() => setStart(true)}>Start working</button>
+      <button onClick={() => setStart(false)}>Pause</button>
     </div>
   );
 };
