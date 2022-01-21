@@ -4,7 +4,6 @@ import { Time } from '../interfaces/Time.interface';
 
 const Timer: React.FC<{ time: Time }> = ({ time }) => {
   const { setStart, hrsMinsSecs } = useTimer(time);
-
   return (
     <div>
       <div>{`${hrsMinsSecs.hrs}:${hrsMinsSecs.mn}:${hrsMinsSecs.s}`}</div>
