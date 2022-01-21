@@ -12,7 +12,7 @@ const useTimer = (time: Time) => {
   const isMinuteCountdownFinished = () => !!(hrsMinsSecs.mn === 0 && hrsMinsSecs.s === 0);
   const isSecondsCountdownFinished = () => !!(hrsMinsSecs.s === 0);
 
-  const tick = () => {
+  const ticTac = () => {
     if (isTotalCountDownFinished()) {
       return reset();
     }
@@ -30,7 +30,7 @@ const useTimer = (time: Time) => {
   };
 
   return {
-    tick,
+    ticTac,
     setStart,
     start,
     hrsMinsSecs

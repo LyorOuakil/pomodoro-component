@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import useTimer from '../hooks/useTimerHooks';
 import { Time } from '../interfaces/Time.interface';
 
 const Timer: React.FC<{ time: Time }> = ({ time }) => {
-  const { tick, start, setStart, hrsMinsSecs } = useTimer(time);
+  const { ticTac, start, setStart, hrsMinsSecs } = useTimer(time);
 
   useEffect(() => {
     if (start) {
-      const timerId = setInterval(() => tick(), 1000);
+      const timerId = setInterval(() => ticTac(), 1000);
       return () => clearInterval(timerId);
     }
     return () => {};
