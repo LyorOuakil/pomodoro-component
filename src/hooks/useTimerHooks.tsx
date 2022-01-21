@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Time } from '../interfaces/Time.interface';
 
 const useTimer = (time: Time) => {
@@ -22,12 +22,21 @@ const useTimer = (time: Time) => {
     if (isSecondsCountdownFinished()) {
       return setTime({ hrs: hrsMinsSecs.hrs, mn: hrsMinsSecs.mn - 1, s: 59 });
     }
+
     return setTime({
       hrs: hrsMinsSecs.hrs,
       mn: hrsMinsSecs.mn,
       s: hrsMinsSecs.s - 1
     });
   };
+
+  useEffect(() => {
+    if (start) {
+      const timerId = setInterval(() => ticTac(), 1000);
+      return () => clearInterval(timerId);
+    }
+    return () => {};
+  });
 
   return {
     ticTac,
